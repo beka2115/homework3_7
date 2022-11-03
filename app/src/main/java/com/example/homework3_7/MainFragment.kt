@@ -52,11 +52,11 @@ class MainFragment : Fragment() {
         navList.add(NavigationComponents("Alive","https://i.pinimg.com/originals/b8/10/e3/b810e3b20a5167598122f76fc171c574.jpg","Tomas Shelby",10))
 
     }
-    fun onClick(positioon:Int){
+    fun onClick(position:Int){
+        findNavController().navigate(MainFragmentDirections.actionMainFragmentToSecondFragment(navList[position].positionNum.toString().toInt()))
 
-        findNavController().navigate(R.id.secondFragment, bundleOf(KEY_FOR_FRAGMENT_ALIVE to navList[positioon].positionNum ),
-           // bundleOf(KEY_FOR_FRAGMENT_NAME to navList[positioon].name),
-        )
+      //  findNavController().navigate(R.id.secondFragment, bundleOf(KEY_FOR_FRAGMENT_ALIVE to navList[positioon].positionNum)
+           // bundleOf(KEY_FOR_FRAGMENT_NAME to navList[positioon].name), )
 
     }
 
